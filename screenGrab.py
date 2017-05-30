@@ -15,6 +15,8 @@ def region_of_interest(img, vertices):
 def process_img(original_image):
 	processed_img = cv2.cvtColor(original_image, cv2.COLOR_BGR2GRAY)
 	processed_img = cv2.Canny(processed_img, threshold1 = 200, threshold2 = 300)
+	vertices = np.array([10, 500], [10, 300], [300, 200], [500, 200], [800, 300], [800. 500])
+	processed_img = region_of_interest(processed_img)
 	return processed_img
 
 
