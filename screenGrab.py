@@ -6,6 +6,12 @@ from input import PressKey
 
 movement_dict = {'W' : 0x11, 'A' : 0x1E, 'S' : 0x1f, 'D' : 0x20}
 
+def region_of_interest(img, vertices):
+	mask = np.zeros_like(img)
+	cv2.fillPoly(mask, vertices, 255)
+	masked = cv2.bitwise_and(img, mask)
+	return masked
+
 def process_img(original_image):
 	processed_img = cv2.cvtColor(original_image, cv2.COLOR_BGR2GRAY)
 	processed_img = cv2.Canny(processed_img, threshold1 = 200, threshold2 = 300)
