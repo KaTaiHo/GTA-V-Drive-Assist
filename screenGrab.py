@@ -21,7 +21,6 @@ def process_img(original_image):
 	processed_img = region_of_interest(processed_img, [vertices])
 	return processed_img
 
-
 time.sleep(4)
 
 last_time = time.time()
