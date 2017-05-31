@@ -30,11 +30,11 @@ def process_img(original_image):
 	processed_img = region_of_interest(processed_img, [vertices])
 
 	#edges
-	lines = cv2.HoughLinesP(processed_img, 1, np.pi/180, 180, 20, 15)
+	lines = cv2.HoughLinesP(processed_img, 1, np.pi/180, 180, np.array([]) , 100, 5)
 	draw_lines(processed_img, lines)
 	return processed_img
 
-time.sleep(4)
+time.sleep(2)
 
 last_time = time.time()
 print (type(movement_dict['W']))
